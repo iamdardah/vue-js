@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+    <div class="header">
+        <h1>This is header</h1>
+    </div>
+
+    <div id="mainContent">
+        <p>{{ content }}</p>
+        <h2>Student: {{ studentInfo.studentName }}</h2>
+        <p>Website: <a :href="studentInfo.studentWebLink">{{ studentInfo.studentWebName }}</a></p>
+        <p>Facebook: <span v-html="studentFacebook"></span></p>
+
+        <br>
+        <p>Counter: {{count }}</p>
+        <button @click="increase">Increase</button>
+        <button v-on:click="decrease">Decrease</button>
+        <button @click="count = 0">Go to zero</button>
+        <button @click="count = count * 2">Increase Double</button>
+        <button @click="count = count + 2">Increase 2</button>
+        <br>
+        <br>
+        <button @click="increaseOne($event, 2)">Increase 2</button>
+        <button v-on:click="decreaseOne(2)">Decrease 2</button>
+    </div>
+    
+    <script src="assets/vue.global.js"></script>
+    <script src="assets/app.js"></script>
+</body>
+</html>
